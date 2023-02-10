@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ryanf"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-10 04:22:22 PM"/>
+        <attribute name="created" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0xMDswMzoyNTozMCBQTTsyNDQx"/>
+        <attribute name="edited" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0xMDswNDoyMjoyMiBQTTsxOzI1NDg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="FixedCost" type="Real" array="False" size=""/>
+            <declare name="PPU" type="Real" array="False" size=""/>
+            <declare name="CPU" type="Real" array="False" size=""/>
+            <declare name="BEP" type="Real" array="False" size=""/>
+            <output expression="&quot;We need to determine our break even point.  How much are our fixed production costs at the company?&quot;" newline="True"/>
+            <input variable="FixedCost"/>
+            <output expression="&quot;How much are we charging for each unit?&quot;" newline="True"/>
+            <input variable="PPU"/>
+            <output expression="&quot;How much does it cost us for each unit?&quot;" newline="True"/>
+            <input variable="CPU"/>
+            <assign variable="BEP" expression="(FixedCost)/(PPU-CPU)"/>
+            <output expression="&quot;It appears that our break even point is &quot; &amp; BEP &amp; &quot;.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

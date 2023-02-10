@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ryanf"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-08 12:58:41 PM"/>
+        <attribute name="created" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0wODsxMjo1MDowMiBQTTsyNDQ1"/>
+        <attribute name="edited" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0wODsxMjo1ODo0MSBQTTsxOzI1NjQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="InitialPrice" type="Real" array="False" size=""/>
+            <declare name="NewPrice" type="Real" array="False" size=""/>
+            <declare name="NumStock" type="Integer" array="False" size=""/>
+            <declare name="StockValueChange" type="Real" array="False" size=""/>
+            <output expression="&quot;Hello, how many shares of our stock do you hold?&quot;" newline="True"/>
+            <input variable="NumStock"/>
+            <output expression="&quot;How much was each share going for before?&quot;" newline="True"/>
+            <input variable="InitialPrice"/>
+            <output expression="&quot;How much is each share going for now?&quot;" newline="True"/>
+            <input variable="NewPrice"/>
+            <assign variable="StockValueChange" expression="(NewPrice-InitialPrice)*NumStock"/>
+            <output expression="&quot;It appears your stock holdings have changed by an amount of $&quot; &amp; StockValueChange &amp; &quot;.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

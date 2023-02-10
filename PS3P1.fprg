@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ryanf"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-08 12:49:56 PM"/>
+        <attribute name="created" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0wODsxMjoyODozMCBQTTsyNDUx"/>
+        <attribute name="edited" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0wODsxMjo0OTo1NiBQTTsxOzI1NzA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="FirstExam" type="Real" array="False" size=""/>
+            <declare name="SecondExam" type="Real" array="False" size=""/>
+            <declare name="TotalScore" type="Real" array="False" size=""/>
+            <output expression="&quot;Hello.  Your first exam is worth %60 of your grade, what did you score?&quot;" newline="True"/>
+            <input variable="FirstExam"/>
+            <output expression="&quot;The second exam was worth 40% of your grade.  What did you score?&quot;" newline="True"/>
+            <input variable="SecondExam"/>
+            <assign variable="TotalScore" expression="(FirstExam*0.6)+(SecondExam*0.4)"/>
+            <output expression="&quot;After weighting your exams, your total grade is &quot; &amp; TotalScore &amp; &quot;.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
