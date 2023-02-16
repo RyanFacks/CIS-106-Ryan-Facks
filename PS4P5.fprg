@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ryanf"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-15 06:20:59 PM"/>
+        <attribute name="created" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0xNDswNzo0ODo0MiBQTTsyNDU3"/>
+        <attribute name="edited" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0xNTswNjoyMDo1OSBQTTszOzI1NjU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="name" type="String" array="False" size=""/>
+            <declare name="numdependents" type="Integer" array="False" size=""/>
+            <declare name="grossincome" type="Real" array="False" size=""/>
+            <declare name="adjustedincome" type="Real" array="False" size=""/>
+            <declare name="taxrate" type="Real" array="False" size=""/>
+            <declare name="incometax" type="Real" array="False" size=""/>
+            <declare name="tax" type="Real" array="False" size=""/>
+            <output expression="&quot;What is your last name?&quot;" newline="True"/>
+            <input variable="name"/>
+            <output expression="&quot;How many dependents do you have?&quot;" newline="True"/>
+            <input variable="numdependents"/>
+            <output expression="&quot;What is your income per year?&quot;" newline="True"/>
+            <input variable="grossincome"/>
+            <assign variable="adjustedincome" expression="Grossincome - (NumDependents * 12000)"/>
+            <if expression="adjustedincome &lt;= 50000">
+                <then>
+                    <assign variable="tax" expression="0.1"/>
+                </then>
+                <else>
+                    <assign variable="tax" expression=".2"/>
+                </else>
+            </if>
+            <assign variable="incometax" expression="tax*adjustedincome"/>
+            <if expression="incometax&lt;0">
+                <then>
+                    <assign variable="incometax" expression="100"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="&quot;Mr/Mrs. &quot; &amp; name &amp; &quot; your gross income is $&quot; &amp; grossincome &amp; &quot; and you have &quot; &amp; numdependents &amp; &quot; dependents. Your adjusted gross income is $&quot; &amp; adjustedincome &amp; &quot; and your income tax is $&quot; &amp; incometax" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ryanf"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-14 06:45:49 PM"/>
+        <attribute name="created" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0xNDswNjozMzozMyBQTTsyNDUw"/>
+        <attribute name="edited" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0xNDswNjo0NTo0OSBQTTsxOzI1Njg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="NumPurchased" type="Integer" array="False" size=""/>
+            <declare name="AorB" type="String" array="False" size=""/>
+            <declare name="ExtPrice" type="Real" array="False" size=""/>
+            <output expression="&quot;How many items did you purchase?&quot;" newline="True"/>
+            <input variable="NumPurchased"/>
+            <output expression="&quot;Did you purchase item 'A' or item 'B'?&quot;" newline="True"/>
+            <input variable="AorB"/>
+            <if expression="AorB == &quot;A&quot;">
+                <then>
+                    <assign variable="ExtPrice" expression="NumPurchased*10.00"/>
+                    <output expression="&quot;You purchased &quot; &amp; NumPurchased &amp; &quot; items at $10 a unit. This results in your extended price being $&quot; &amp; ExtPrice" newline="True"/>
+                </then>
+                <else>
+                    <if expression="AorB == &quot;B&quot;">
+                        <then>
+                            <assign variable="ExtPrice" expression="NumPurchased*20.00"/>
+                            <output expression="&quot;You purchased &quot; &amp; NumPurchased &amp; &quot; items at $20 a unit. This results in your extended price being $&quot; &amp; ExtPrice" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;You must state item A or item B. Sorry, try again.&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

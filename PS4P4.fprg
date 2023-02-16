@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ryanf"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-14 07:48:38 PM"/>
+        <attribute name="created" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0xNDswNjo1Njo1MyBQTTsyNDU3"/>
+        <attribute name="edited" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0xNDswNzo0ODozOCBQTTsyOzI1NzE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="appliancename" type="String" array="False" size=""/>
+            <declare name="applianceprice" type="Real" array="False" size=""/>
+            <declare name="warranty" type="Real" array="False" size=""/>
+            <declare name="appliancetotal" type="Real" array="False" size=""/>
+            <output expression="&quot;What appliance did you purchase?&quot;" newline="True"/>
+            <input variable="appliancename"/>
+            <output expression="&quot;What was the retail price of a &quot; &amp; appliancename &amp; &quot;?&quot;" newline="True"/>
+            <input variable="applianceprice"/>
+            <if expression="applianceprice &lt;= 1000">
+                <then>
+                    <output expression="&quot;This price point puts you in the 5% warranty category.&quot;" newline="True"/>
+                    <assign variable="warranty" expression="0.05 * applianceprice"/>
+                    <assign variable="appliancetotal" expression="applianceprice+warranty"/>
+                </then>
+                <else>
+                    <output expression="&quot;This price point puts you in the 10% warranty category.&quot;" newline="True"/>
+                    <assign variable="warranty" expression="0.10 * applianceprice"/>
+                    <assign variable="appliancetotal" expression="applianceprice+warranty"/>
+                </else>
+            </if>
+            <output expression="&quot;It appears that your &quot; &amp; appliancename &amp; &quot; costs $&quot; &amp; applianceprice &amp; &quot;.  If you purchase the warranty, the warranty will cost $&quot; &amp; warranty &amp; &quot; and ultimately your total will be $&quot; &amp; appliancetotal" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

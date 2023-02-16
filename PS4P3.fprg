@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ryanf"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-14 06:56:49 PM"/>
+        <attribute name="created" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0xNDswNjo0NTo1NiBQTTsyNDU4"/>
+        <attribute name="edited" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0xNDswNjo1Njo0OSBQTTsxOzI1NzA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Books" type="Integer" array="False" size=""/>
+            <declare name="Bookscost" type="Real" array="False" size=""/>
+            <declare name="Ordertotal" type="Real" array="False" size=""/>
+            <declare name="Totalwshipping" type="Real" array="False" size=""/>
+            <output expression="&quot;We are having a free shipping deal if your order is over $50!  How many books did you purchase?&quot;" newline="True"/>
+            <input variable="Books"/>
+            <output expression="&quot;How much did each book cost?&quot;" newline="True"/>
+            <input variable="Bookscost"/>
+            <assign variable="Ordertotal" expression="Books*Bookscost"/>
+            <if expression="Ordertotal &lt;= 50.00">
+                <then>
+                    <assign variable="Totalwshipping" expression="Ordertotal + 25"/>
+                    <output expression="&quot;Your total is $&quot; &amp; Ordertotal &amp; &quot; and shipping is $25.  Your total with shipping is $&quot; &amp; Totalwshipping" newline="True"/>
+                </then>
+                <else>
+                    <assign variable="Totalwshipping" expression="Ordertotal"/>
+                    <output expression="&quot;Your total is $&quot; &amp; Ordertotal &amp; &quot; and shipping is free!  Your total with shipping is $&quot; &amp; Totalwshipping" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

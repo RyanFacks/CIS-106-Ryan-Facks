@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ryanf"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-14 06:33:16 PM"/>
+        <attribute name="created" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0xNDswNTowNDowOSBQTTsyNDUw"/>
+        <attribute name="edited" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0xNDswNjozMzoxNiBQTTsxOzI1NTk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ItemsPurchased" type="Integer" array="False" size=""/>
+            <declare name="ItemPrice" type="Real" array="False" size=""/>
+            <declare name="Tax" type="Real" array="False" size=""/>
+            <declare name="ExtendedPrice" type="Real" array="False" size=""/>
+            <declare name="Total" type="Real" array="False" size=""/>
+            <output expression="&quot;How many items did you purchased?&quot;" newline="True"/>
+            <input variable="ItemsPurchased"/>
+            <if expression="ItemsPurchased &gt;= 1000">
+                <then>
+                    <assign variable="ItemPrice" expression="3.00"/>
+                    <assign variable="ExtendedPrice" expression="ItemsPurchased*ItemPrice"/>
+                    <assign variable="Tax" expression="ExtendedPrice*0.07"/>
+                    <assign variable="Total" expression="ExtendedPrice + Tax"/>
+                </then>
+                <else>
+                    <assign variable="ItemPrice" expression="5.00"/>
+                    <assign variable="ExtendedPrice" expression="ItemsPurchased*ItemPrice"/>
+                    <assign variable="Tax" expression="ExtendedPrice*0.07"/>
+                    <assign variable="Total" expression="ExtendedPrice + Tax"/>
+                </else>
+            </if>
+            <output expression="&quot;You purchased &quot; &amp; ItemsPurchased &amp; &quot; at $&quot; &amp; ItemPrice &amp; &quot; a unit.  Your extended price is $&quot; &amp; ExtendedPrice &amp; &quot; and at 7% tax you will pay $&quot; &amp; Tax &amp; &quot; in tax. Ultimately you will pay $&quot; &amp; Total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
