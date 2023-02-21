@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ryanf"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-20 12:29:04 PM"/>
+        <attribute name="created" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0yMDsxMjowMjo1NSBQTTsyNDQ0"/>
+        <attribute name="edited" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0yMDsxMjoyOTowNCBQTTsxOzI1NTU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="PartID" type="Integer" array="False" size=""/>
+            <declare name="Quantity" type="Integer" array="False" size=""/>
+            <declare name="unitcost" type="Integer" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <output expression="&quot;What is the ID# of the part you purchased?&quot;" newline="True"/>
+            <input variable="PartID"/>
+            <output expression="&quot;How many did you purchase?&quot;" newline="True"/>
+            <input variable="Quantity"/>
+            <if expression="PartID = 10 or PartID = 55">
+                <then>
+                    <assign variable="unitcost" expression="1"/>
+                </then>
+                <else>
+                    <if expression="PartID = 99">
+                        <then>
+                            <assign variable="unitcost" expression="2"/>
+                        </then>
+                        <else>
+                            <if expression="PartID = 80 or PartID = 70">
+                                <then>
+                                    <assign variable="unitcost" expression="3"/>
+                                </then>
+                                <else>
+                                    <assign variable="unitcost" expression="5"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="total" expression="Quantity*unitcost"/>
+            <output expression="&quot;You purchased PartID# &quot; &amp; PartID &amp; &quot; which has a value of $&quot; &amp; unitcost &amp; &quot; per unit.  Because you purchased &quot; &amp; Quantity &amp; &quot; parts your total is $&quot; &amp; total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

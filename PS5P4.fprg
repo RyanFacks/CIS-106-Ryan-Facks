@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ryanf"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-20 03:55:27 PM"/>
+        <attribute name="created" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0yMDswMTozODo0OSBQTTsyNDU0"/>
+        <attribute name="edited" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0yMDswMzo1NToyNyBQTTsxOzI1NTk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numticket" type="Integer" array="False" size=""/>
+            <declare name="PPT" type="Integer" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <output expression="&quot;How many tickets did we sell?&quot;" newline="True"/>
+            <input variable="numticket"/>
+            <if expression="numticket &gt;= 25">
+                <then>
+                    <assign variable="PPT" expression="50"/>
+                </then>
+                <else>
+                    <if expression="numticket &gt;= 10">
+                        <then>
+                            <assign variable="PPT" expression="60"/>
+                        </then>
+                        <else>
+                            <if expression="numticket &gt;= 5">
+                                <then>
+                                    <assign variable="PPT" expression="70"/>
+                                </then>
+                                <else>
+                                    <if expression="numticket &gt;= 0">
+                                        <then>
+                                            <assign variable="PPT" expression="75"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;You can not have a negative value!&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="total" expression="PPT*numticket"/>
+            <output expression="&quot;The number of tickets sold is &quot; &amp; numticket &amp; &quot; and each ticket is $&quot; &amp; PPT &amp; &quot; per ticket.  The total cost is $&quot; &amp; total &amp; &quot;.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

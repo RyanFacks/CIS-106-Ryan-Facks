@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ryanf"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-20 04:23:14 PM"/>
+        <attribute name="created" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0yMDswMzo1NjowMyBQTTsyNDQ2"/>
+        <attribute name="edited" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0yMDswNDoyMzoxNCBQTTsyOzI1NTI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="name" type="String" array="False" size=""/>
+            <declare name="salary" type="Real" array="False" size=""/>
+            <declare name="joblvl" type="Integer" array="False" size=""/>
+            <declare name="bonus" type="Real" array="False" size=""/>
+            <output expression="&quot;What is your last name?&quot;" newline="True"/>
+            <input variable="name"/>
+            <output expression="&quot;What is your current salary?&quot;" newline="True"/>
+            <input variable="salary"/>
+            <output expression="&quot;What is your job level?&quot;" newline="True"/>
+            <input variable="joblvl"/>
+            <if expression="joblvl &gt;= 10">
+                <then>
+                    <assign variable="bonus" expression="0.25*salary"/>
+                </then>
+                <else>
+                    <if expression="joblvl &gt;= 5">
+                        <then>
+                            <assign variable="bonus" expression="0.2*salary"/>
+                        </then>
+                        <else>
+                            <assign variable="bonus" expression="0.1*salary"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="name &amp; &quot; it appears your bonus for the year will be $&quot; &amp; bonus" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ryanf"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-20 12:02:07 PM"/>
+        <attribute name="created" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0yMDsxMTo0MjowNiBBTTsyNDI4"/>
+        <attribute name="edited" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0yMDsxMjowMjowNyBQTTsxOzI1NDk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="widgetqty" type="Integer" array="False" size=""/>
+            <declare name="extendedprice" type="Real" array="False" size=""/>
+            <declare name="totalprice" type="Real" array="False" size=""/>
+            <declare name="taxamount" type="Real" array="False" size=""/>
+            <output expression="&quot;How many widgets did you purchase?&quot;" newline="True"/>
+            <input variable="widgetqty"/>
+            <if expression="widgetqty &gt; 10000">
+                <then>
+                    <assign variable="extendedprice" expression="widgetqty*10"/>
+                </then>
+                <else>
+                    <if expression="widgetqty &gt;= 5000">
+                        <then>
+                            <assign variable="extendedprice" expression="widgetqty*20"/>
+                        </then>
+                        <else>
+                            <assign variable="extendedprice" expression="widgetqty*30"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="taxamount" expression="extendedprice*0.07"/>
+            <assign variable="totalprice" expression="extendedprice+taxamount"/>
+            <output expression="&quot;Since you have purchased &quot; &amp; widgetqty &amp; &quot; widgets, your extended price is $&quot; &amp; extendedprice &amp; &quot;.  With tax at 7%, your will pay $&quot; &amp; taxamount &amp; &quot; and your total price will be $&quot; &amp; totalprice" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
