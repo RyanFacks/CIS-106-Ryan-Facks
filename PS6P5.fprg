@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ryanf"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-26 12:09:23 PM"/>
+        <attribute name="created" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0yNjsxMTo1NjoxNyBBTTsyNDQx"/>
+        <attribute name="edited" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0yNjsxMjowOToyMyBQTTsxOzI1NjA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="response" type="String" array="False" size=""/>
+            <declare name="qty" type="Integer" array="False" size=""/>
+            <declare name="ppu" type="Real" array="False" size=""/>
+            <declare name="extendedprice" type="Real" array="False" size=""/>
+            <declare name="discount" type="Real" array="False" size=""/>
+            <declare name="discountsum" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <assign variable="discountsum" expression="0"/>
+            <output expression="&quot;Do you want to run this program? ('yes' or 'no')&quot;" newline="True"/>
+            <input variable="response"/>
+            <while expression="response == &quot;yes&quot;">
+                <output expression="&quot;How many units did you buy?&quot;" newline="True"/>
+                <input variable="qty"/>
+                <output expression="&quot;How much did each unit cost?&quot;" newline="True"/>
+                <input variable="ppu"/>
+                <assign variable="extendedprice" expression="qty*ppu"/>
+                <if expression="extendedprice &gt; 10000">
+                    <then>
+                        <assign variable="discount" expression="extendedprice*0.25"/>
+                    </then>
+                    <else>
+                        <assign variable="discount" expression="extendedprice*0.1"/>
+                    </else>
+                </if>
+                <assign variable="total" expression="extendedprice - discount"/>
+                <output expression="&quot;Your extended price is $&quot; &amp; extendedprice &amp; &quot; and your discount is $&quot; &amp; discount &amp; &quot;. This means your total is $&quot; &amp; total" newline="True"/>
+                <assign variable="discountsum" expression="discountsum+discount"/>
+                <output expression="&quot;Do you want to run this program again? ('yes' or 'no')&quot;" newline="True"/>
+                <input variable="response"/>
+            </while>
+            <output expression="&quot;The sum of all the discounts is $&quot; &amp; discountsum" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

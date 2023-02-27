@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ryanf"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-26 11:09:43 AM"/>
+        <attribute name="created" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0yNjswOTo1MzoxMyBBTTsyNDQx"/>
+        <attribute name="edited" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMi0yNjsxMTowOTo0MyBBTTsxOzI1NDY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="startv" type="Integer" array="False" size=""/>
+            <declare name="incrementv" type="Integer" array="False" size=""/>
+            <declare name="stopv" type="Integer" array="False" size=""/>
+            <output expression="&quot;What number do you want to start at?&quot;" newline="True"/>
+            <input variable="startv"/>
+            <output expression="&quot;What number do you want to count by?&quot;" newline="True"/>
+            <input variable="incrementv"/>
+            <output expression="&quot;What number do you want to stop at?&quot;" newline="True"/>
+            <input variable="stopv"/>
+            <while expression="startv &lt;= stopv">
+                <output expression="startv" newline="True"/>
+                <assign variable="startv" expression="startv + incrementv"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
