@@ -6,7 +6,7 @@ sumtuition = 0
 while lastname!="":
   district=str(f.readline())
   credits=int(f.readline())
-  if district == "In":
+  if 'In' in district:
     creditprice = 250
   else:
     creditprice = 500
