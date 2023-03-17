@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ryanf"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-03-15 11:52:02 AM"/>
+        <attribute name="created" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMy0xNTsxMTozMjo1MiBBTTsyNDMz"/>
+        <attribute name="edited" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMy0xNTsxMTo1MjowMiBBTTsxOzI1Mzg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="qty" type="Integer" array="False" size=""/>
+            <declare name="price" type="Real" array="False" size=""/>
+            <declare name="total" type="Integer" array="False" size=""/>
+            <output expression="&quot;Please enter the number of items purchased: &quot;" newline="True"/>
+            <input variable="qty"/>
+            <output expression="&quot;What was the price per unit? &quot;" newline="True"/>
+            <input variable="price"/>
+            <call expression="computetotal(qty,price)"/>
+            <assign variable="total" expression="computetotal(qty,price)"/>
+            <output expression="&quot;You ordered &quot; &amp; qty &amp; &quot; number of items. Each item cost $&quot; &amp; price &amp; &quot;. This results in a total of $&quot; &amp; total" newline="True"/>
+        </body>
+    </function>
+    <function name="computetotal" type="Real" variable="total">
+        <parameters>
+            <parameter name="price" type="Real" array="False"/>
+            <parameter name="qty" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="total" type="Real" array="False" size=""/>
+            <assign variable="total" expression="price * qty"/>
+            <if expression="total &gt; 10000">
+                <then>
+                    <assign variable="total" expression="total*0.9"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

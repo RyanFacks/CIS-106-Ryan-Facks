@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ryanf"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-03-15 05:45:58 PM"/>
+        <attribute name="created" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMy0xNTsxMTo1MjoxMSBBTTsyNDMw"/>
+        <attribute name="edited" value="cnlhbmY7UllBTkFTVVM7MjAyMy0wMy0xNTswNTo0NTo1OCBQTTszOzI1NzE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lname" type="String" array="False" size=""/>
+            <declare name="numhit" type="Integer" array="False" size=""/>
+            <declare name="atbats" type="Integer" array="False" size=""/>
+            <declare name="batavg" type="Real" array="False" size=""/>
+            <output expression="&quot;What is the player's last name?&quot;" newline="True"/>
+            <input variable="lname"/>
+            <output expression="&quot;How many times was the player at bat? &quot;" newline="True"/>
+            <input variable="atbats"/>
+            <output expression="&quot;How many hits did the player have?&quot;" newline="True"/>
+            <input variable="numhit"/>
+            <call expression="compbatavg(numhit,atbats)"/>
+            <assign variable="batavg" expression="compbatavg(numhit,atbats)"/>
+            <output expression="&quot;The player &quot; &amp; lname &amp; &quot; has a batting average of &quot; &amp; batavg" newline="True"/>
+        </body>
+    </function>
+    <function name="compbatavg" type="Real" variable="batavg">
+        <parameters>
+            <parameter name="atbats" type="Integer" array="False"/>
+            <parameter name="numhit" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="batavg" type="Real" array="False" size=""/>
+            <assign variable="batavg" expression="atbats/numhit"/>
+        </body>
+    </function>
+</flowgorithm>
